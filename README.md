@@ -8,6 +8,7 @@ WebP Images with htaccess
   
 
 ### Usage
+Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
 ```htaccess
 <IfModule mod_rewrite.c>
 	RewriteEngine On
