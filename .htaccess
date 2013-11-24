@@ -1,7 +1,5 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteCond %{HTTP_USER_AGENT} !(Chrome\/[0-8]|Android\s[0-3])\.
-	RewriteCond %{HTTP_USER_AGENT} Chrome [OR]
 	RewriteCond %{HTTP_ACCEPT} image/webp
 	RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
 	RewriteRule ^(images.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
