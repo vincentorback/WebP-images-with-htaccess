@@ -28,7 +28,7 @@ AddType image/webp .webp
 
 
 #### Other soultions
-This is the javascript solution. A far more easier solution is to a use the .htaccess file. Read more [here](https://github.com/vincentorback/WebP-images-with-htaccess).
+This is the .htaccess solution. Another way is to use javascript and Modernizr. Read more [here](https://github.com/vincentorback/WebP-Images-with-modernizr).
 
 
 
