@@ -10,20 +10,19 @@ This snippet offers a very easy way to detect if the browser supports WebP image
 
 
 ### Usage
+Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
 ```htaccess
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteCond %{HTTP_USER_AGENT} !(Chrome\/[0-8]|Android\s[0-3])\.
-	RewriteCond %{HTTP_USER_AGENT} Chrome [OR]
 	RewriteCond %{HTTP_ACCEPT} image/webp
 	RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-	RewriteRule ^(images.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+	RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 </IfModule>
-
+ 
 <IfModule mod_headers.c>
 	Header append Vary Accept env=REDIRECT_accept
 </IfModule>
-
+ 
 AddType image/webp .webp
 ```
 
