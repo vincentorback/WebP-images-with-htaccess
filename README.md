@@ -5,9 +5,7 @@ WebP Images with htaccess
 
 *- [Google](https://developers.google.com/speed/webp/)*
 
-
 This snippet offers a very easy way to detect if the browser supports WebP images and then replaces jpg and png images if they have a webp images located at the same path with the same file name.
-
 
 ### Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
@@ -26,12 +24,9 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 AddType image/webp .webp
 ```
 
-
 #### Other soultions
 This is the .htaccess solution. Another way is to use javascript and Modernizr. Read more [here](https://github.com/vincentorback/WebP-Images-with-modernizr).
 
-
-
 #### Feedback
-If you've got any thoughts or idead about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues) or make a pull request!
-I'm just as interested as you in new image formats and responsive techniques.
+If you’ve got any thoughts or ideas about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues), a [pull request](https://github.com/vincentorback/prophetcruzin/pulls) or hit me up on [Twitter](https://twitter.com/vorback)!
+I’m just as interested as you in new image formats and responsive techniques.
