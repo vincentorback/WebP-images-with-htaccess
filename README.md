@@ -28,5 +28,5 @@ AddType image/webp .webp
 This is the .htaccess solution. Another way is to use javascript and Modernizr. Read more [here](https://github.com/vincentorback/WebP-Images-with-modernizr).
 
 #### Feedback
-If you’ve got any thoughts or ideas about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues), a [pull request](https://github.com/vincentorback/prophetcruzin/pulls) or hit me up on [Twitter](https://twitter.com/vorback)!
+If you’ve got any thoughts or ideas about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues), a [pull request](https://github.com/vincentorback/WebP-images-with-htaccess/pulls) or hit me up on [Twitter](https://twitter.com/vorback)!
 I’m just as interested as you in new image formats and responsive techniques.
