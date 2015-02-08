@@ -1,5 +1,4 @@
-WebP Images with htaccess
-==========================
+# WebP Images with htaccess
 
 > WebP is a new image format that provides lossless and lossy compression for images on the web. WebP lossless images are 26% smaller in size compared to PNGs. WebP lossy images are 25-34% smaller in size compared to JPEG images at equivalent SSIM index. WebP supports lossless transparency (also known as alpha channel) with just 22% additional bytes. Transparency is also supported with lossy compression and typically provides 3x smaller file sizes compared to PNG when lossy compression is acceptable for the red/green/blue color channels.
 
@@ -7,7 +6,7 @@ WebP Images with htaccess
 
 This snippet offers a very easy way to detect if the browser supports WebP images and then replaces jpg and png images if they have a webp images located at the same path with the same file name.
 
-### Usage
+## Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
 ```htaccess
 <IfModule mod_rewrite.c>
@@ -24,9 +23,20 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 AddType image/webp .webp
 ```
 
-#### Other soultions
-This is the .htaccess solution. Another way is to use javascript. Read more [here](https://github.com/vincentorback/WebP-Images-with-modernizr).
+## Other soultions
 
-#### Feedback
+#### HTML
+This is the prefered version of course but we have to wait for [better browser support](http://caniuse.com/#feat=picture).
+```html
+<picture>
+  <source srcset="/path/to/image.webp" type="image/webp">
+  <img src="/path/to/image.jpg" alt="">
+</picture>
+```
+
+#### Javascript
+This is the .htaccess solution. Another way is to use javascript. [Read more here](https://github.com/vincentorback/WebP-Images-with-modernizr).
+
+## Feedback
 If you’ve got any thoughts or ideas about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues), a [pull request](https://github.com/vincentorback/WebP-images-with-htaccess/pulls) or hit me up on [Twitter](https://twitter.com/vorback)!
 I’m just as interested as you in new image formats and responsive techniques.
