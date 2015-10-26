@@ -1,10 +1,7 @@
 # WebP Images with htaccess
+This snippet offers an easy way to detect if the browser [supports WebP](http://caniuse.com/#search=webp) images and then if there is a WebP images located at the same path as the originally provided image with the same file name, it replaces it with that WebP image. Read more about the WebP format [at Google](https://developers.google.com/speed/webp/).
 
-> WebP is a new image format that provides lossless and lossy compression for images on the web. WebP lossless images are 26% smaller in size compared to PNGs. WebP lossy images are 25-34% smaller in size compared to JPEG images at equivalent SSIM index. WebP supports lossless transparency (also known as alpha channel) with just 22% additional bytes. Transparency is also supported with lossy compression and typically provides 3x smaller file sizes compared to PNG when lossy compression is acceptable for the red/green/blue color channels.
-
-*- [Google](https://developers.google.com/speed/webp/)*
-
-This snippet offers a very easy way to detect if the browser supports WebP images and then replaces jpg and png images if they have a webp images located at the same path with the same file name.
+**If you can, use the `<picture>`-element instead of this solution.**
 
 ## Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
@@ -15,18 +12,17 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 	RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
 	RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 </IfModule>
- 
+
 <IfModule mod_headers.c>
 	Header append Vary Accept env=REDIRECT_accept
 </IfModule>
- 
+
 AddType image/webp .webp
 ```
 
-## Other soultions
+## Other solutions
 
-#### HTML
-This is the prefered version of course but we have to wait for [better browser support](http://caniuse.com/#feat=picture).
+#### HTML (Preferred solution)
 ```html
 <picture>
   <source srcset="/path/to/image.webp" type="image/webp">
@@ -34,8 +30,8 @@ This is the prefered version of course but we have to wait for [better browser s
 </picture>
 ```
 
-#### Javascript
-This is the .htaccess solution. Another way is to use javascript. [Read more here](https://github.com/vincentorback/WebP-Images-with-modernizr).
+#### JavaScript
+This is the .htaccess solution. Another way is to use JavaScript. [Read more here](https://github.com/vincentorback/WebP-Images-with-javascript).
 
 ## Feedback
 If you’ve got any thoughts or ideas about this, please make an [issue](https://github.com/vincentorback/WebP-images-with-htaccess/issues), a [pull request](https://github.com/vincentorback/WebP-images-with-htaccess/pulls) or hit me up on [Twitter](https://twitter.com/vorback)!
