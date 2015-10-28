@@ -4,13 +4,19 @@ This snippet offers an easy way to detect if the browser [supports WebP](http://
 **If you can, use the `<picture>`-element instead of this solution.**
 
 ## Usage
-Place the following in your .htaccess file and jpg/png images will be replaced with webp images if found in the same folder.
+Place the following in your .htaccess file and jpg/png images will be replaced with WebP images if found in the same folder.
 ```htaccess
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteCond %{HTTP_ACCEPT} image/webp
-	RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
-	RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+  RewriteEngine On
+
+  # Check if browser support WebP images
+  RewriteCond %{HTTP_ACCEPT} image/webp
+
+  # Check if WebP replacement image exists
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+
+  # Serve WebP image instead
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 </IfModule>
 
 <IfModule mod_headers.c>

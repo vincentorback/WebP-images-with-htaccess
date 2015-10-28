@@ -1,7 +1,13 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Check if browser supports WebP images
   RewriteCond %{HTTP_ACCEPT} image/webp
+
+  # Check if WebP replacement image exists
   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+
+  # Serve WebP image instead
   RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
 </IfModule>
 
