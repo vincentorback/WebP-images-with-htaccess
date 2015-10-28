@@ -5,7 +5,7 @@ This snippet offers an easy way to detect if the browser [supports WebP](http://
 
 ## Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with WebP images if found in the same folder.
-```htaccess
+```apache
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
