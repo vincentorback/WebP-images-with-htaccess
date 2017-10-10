@@ -20,7 +20,7 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 </IfModule>
 
 <IfModule mod_headers.c>
-	Header append Vary Accept env=REDIRECT_accept
+  Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
 <IfModule mod_mime.c>
