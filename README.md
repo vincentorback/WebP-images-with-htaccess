@@ -23,7 +23,9 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 	Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
-AddType image/webp .webp
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
 ```
 
 ## Preferred solution

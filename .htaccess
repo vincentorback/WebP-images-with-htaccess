@@ -15,4 +15,6 @@
   Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
-AddType image/webp .webp
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
