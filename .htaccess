@@ -1,3 +1,8 @@
+<IfModule mod_setenvif.c>
+  # Vary: Accept for all the requests to jpeg and png
+  SetEnvIf Request_URI "\.(jpe?g|png)$" REQUEST_image
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -8,11 +13,11 @@
   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
 
   # Serve WebP image instead
-  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp]
 </IfModule>
 
 <IfModule mod_headers.c>
-  Header append Vary Accept env=REDIRECT_accept
+  Header append Vary Accept env=REQUEST_image
 </IfModule>
 
 <IfModule mod_mime.c>
