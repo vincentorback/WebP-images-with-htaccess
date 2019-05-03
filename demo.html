@@ -1,24 +1,32 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>WebP image replacement with htaccess</title>
-		<style>
-			img {
-				width: 100%;
-				max-width: 800px;
-				margin-bottom: 40px;
-			}
-		</style>
-	</head>
-	<body>
+<head>
+  <meta charset="utf-8">
+  <title>WebP image replacement with htaccess</title>
+  <style>
+    img {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
 
-		<h1>WebP image replacement with htaccess</h1>
+    .background-div {
+      background: 0 100% / cover transparent no-repeat url('/images/image1.jpg');
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebP image replacement with htaccess</h1>
 
-		<p>This image is available as both webp and jpg</p>
-		<img src="images/image1.jpg" />
-		<p>This image is only available as a jpg</p>
-		<img src="images/image2.jpg" />
-
-	</body>
+  <p>1. This image is available as both webp and jpg</p>
+  <img src="images/image1.jpg" />
+  <hr>
+  <p>2. This image is only available as a jpg</p>
+  <img src="images/image2.jpg" />
+  <hr>
+  <p>2. This div has an image background set with a jpg image. It should serve a webp image.</p>
+  <div class="background-div"></div>
+</body>
 </html>
