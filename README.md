@@ -1,7 +1,5 @@
 # WebP images with htaccess
-This snippet detects if the browser [supports WebP](http://caniuse.com/#search=webp) images and then serves a .webp image instead of jpg/png if a .webp file is available at the same location as the supplied jpg/png. Read more about the WebP format [at Google](https://developers.google.com/speed/webp/).
-
-[**If you can, use the `<picture>`-element instead of this solution!**](#preferred-solution)
+This snippet detects if the browser [supports WebP](http://caniuse.com/#search=webp) images and then serves a .webp image instead of jpg/png if a .webp file is available at the same location as the supplied jpg/png. Read more about the webp format and other ways to serve it here: [https://images.guide](https://images.guide/#how-do-i-serve-webp).
 
 ## Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with WebP images if found in the same folder.
@@ -34,6 +32,7 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
 ```
 
 ## Preferred solution
+Controling your files using htaccess sure if fun, but a more responsible way is to just use the `<picture>`-element instead of this solution. It has great support in all the major browsers and has a built in fallback for those without it.
 ```html
 <picture>
   <source srcset="/path/to/image.webp" type="image/webp">
