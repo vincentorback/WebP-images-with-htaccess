@@ -1,32 +1,54 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>WebP image replacement with htaccess</title>
-  <style>
-    img {
-      width: 100%;
-      max-width: 800px;
-      margin-bottom: 40px;
-    }
+  <head>
+    <meta charset="utf-8">
+    <title>WebP image replacement with htaccess</title>
+    <style>
+      * {
+        margin: 0
+      }
 
-    .background-div {
-      background: 0 100% / cover transparent no-repeat url('/images/image1.jpg');
-      width: 400px;
-      height: 400px;
-    }
-  </style>
-</head>
-<body>
-  <h1>WebP image replacement with htaccess</h1>
+      body {
+        padding: 2vmax;
+      }
 
-  <p>1. This image is available as both webp and jpg</p>
-  <img src="images/image1.jpg" />
-  <hr>
-  <p>2. This image is only available as a jpg</p>
-  <img src="images/image2.jpg" />
-  <hr>
-  <p>2. This div has an image background set with a jpg image. It should serve a webp image.</p>
-  <div class="background-div"></div>
-</body>
+      h1 {
+        margin-bottom: 2vmax;
+      }
+
+      main {
+        display: grid;
+        grid-gap: 2vmax;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .background-div {
+        background: 0 100% / cover transparent no-repeat url('/images/image1.jpg');
+        width: 100%;
+        height: 50vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WebP image replacement with htaccess</h1>
+
+    <main>
+      <div>
+        <p>1. This image is available as both webp and jpg.</p>
+        <img src="images/image1.jpg" />
+      </div>
+      <div>
+        <p>2. This image is only available as a jpg.</p>
+        <img src="images/image2.jpg" />
+      </div>
+      <div>
+        <p>3. This div has an image background set with a jpg image. It should serve a webp image if supported.</p>
+        <div class="background-div"></div>
+      </div>
+    </main>
+  </body>
 </html>
