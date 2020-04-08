@@ -4,11 +4,6 @@ This snippet detects if the browser [supports WebP](http://caniuse.com/#search=w
 ## Usage
 Place the following in your .htaccess file and jpg/png images will be replaced with WebP images if found in the same folder.
 ```apache
-<IfModule mod_setenvif.c>
-  # Vary: Accept for all the requests to jpeg and png
-  SetEnvIf Request_URI "\.(jpe?g|png)$" REQUEST_image
-</IfModule>
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -19,10 +14,11 @@ Place the following in your .htaccess file and jpg/png images will be replaced w
   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
 
   # Serve WebP image instead
-  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp]
+  RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=REQUEST_image]
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Vary: Accept for all the requests to jpeg and png
   Header append Vary Accept env=REQUEST_image
 </IfModule>
 
