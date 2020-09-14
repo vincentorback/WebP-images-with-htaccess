@@ -9,32 +9,30 @@
       }
 
       body {
-        padding: 2vmax;
+        padding: 20px;
       }
 
-      h1 {
-        margin-bottom: 2vmax;
-      }
-
-      main {
-        display: grid;
-        grid-gap: 2vmax;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      div {
+        display: inline-block;
+        max-width: 350px;
+        margin: 20px 20px 0 0;
       }
 
       img {
         width: 100%;
       }
 
-      .background-div {
-        background: 0 100% / cover transparent no-repeat url('/images/image1.jpg');
+      span {
+        display: block;
         width: 100%;
         height: 50vh;
+        background: 0 100% / cover transparent no-repeat url('/images/image1.jpg');
       }
     </style>
   </head>
   <body>
     <h1>WebP image replacement with htaccess</h1>
+    <p>Browser support WebP: <strong class="js-test">loading...</strong></p>
 
     <main>
       <div>
@@ -47,8 +45,15 @@
       </div>
       <div>
         <p>3. This div has an image background set with a jpg image. It should serve a webp image if supported.</p>
-        <div class="background-div"></div>
+        <span class="background-div"></span>
       </div>
     </main>
+
+    <script src="modernizr-webp.js"></script>
+    <script>
+      Modernizr.on('webp', function (result) {
+        document.querySelector('.js-test').textContent = result
+      })
+    </script>
   </body>
 </html>
