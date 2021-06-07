@@ -28,7 +28,7 @@ Place the following in your .htaccess file and jpg/png/gif images will be replac
 ```
 
 ## Preferred solution
-Controling your files using htaccess sure if fun, but a more responsible way is to just use the `<picture>`-element instead of this solution. It has great support in all the major browsers and has a built in fallback for those without it.
+Controlling your files using htaccess sure is fun, but a more responsible way is to use the `<picture>`-element instead of this solution. It has [great support](https://caniuse.com/webp) in all major browsers and has a built-in fallback for those without it.
 ```html
 <picture>
   <source srcset="/path/to/image.webp" type="image/webp">
